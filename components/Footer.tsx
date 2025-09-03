@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
 
@@ -15,61 +16,61 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="ml-auto">
+        <div>
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-white">
+              <Link href="/" className="hover:text-white">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/dashboard" className="hover:text-white">
+              <Link href="/dashboard" className="hover:text-white">
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/faq" className="hover:text-white">
+              <Link href="/faq" className="hover:text-white">
                 FAQ
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white">
+              <Link href="/contact" className="hover:text-white">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Resources */}
-        <div className="ml-auto">
+        <div>
           <h3 className="text-lg font-semibold text-white mb-3">Resources</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/blog" className="hover:text-white">
+              <Link href="/blog" className="hover:text-white">
                 Blog
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" className="hover:text-white">
+              <Link href="/privacy" className="hover:text-white">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" className="hover:text-white">
+              <Link href="/terms" className="hover:text-white">
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/help" className="hover:text-white">
+              <Link href="/help" className="hover:text-white">
                 Help Center
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Social Media */}
-        <div className="ml-auto">
+        <div>
           <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a
