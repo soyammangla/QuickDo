@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         <div>
           <h2 className="text-2xl font-bold text-white">QuickDo</h2>
           <p className="mt-3 text-sm">
-            Stay Organized. Stay Productive. <br />
+            Plan Smarter. Work Better. <br />
             Helping you manage tasks, projects, and deadlines with ease.
           </p>
         </div>
@@ -76,6 +77,7 @@ const Footer = () => {
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaTwitter />
@@ -83,6 +85,7 @@ const Footer = () => {
             <a
               href="https://linkedin.com"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaLinkedin />
@@ -90,6 +93,7 @@ const Footer = () => {
             <a
               href="https://github.com/soyammangla"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaGithub />
@@ -101,7 +105,13 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2">
         <span>Made with</span>
-        <IoIosHeart className="text-red-500 text-lg" />
+        <motion.span
+          animate={{ scale: [1, 1.4, 1] }}
+          transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1 }}
+          className="inline-flex"
+        >
+          <IoIosHeart className="text-red-500 text-lg cursor-pointer" />
+        </motion.span>
         <span>by Soyam.</span>
       </div>
     </footer>
