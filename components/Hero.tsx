@@ -5,9 +5,9 @@ const Hero = () => {
     <section className="flex flex-col items-center justify-center text-center mt-1 w-full max-w-6xl mx-auto px-6 py-24 bg-gradient-to-r from-black via-gray-900 to-black text-white rounded-2xl shadow-xl">
       {/* Heading */}
       <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-snug tracking-tight">
-        Organize
+        Organize Your Day
         <br />
-        Your Day With <span className="text-blue-500">QuickDo</span>
+        With <span className="text-blue-500">QuickDo</span>
       </h1>
 
       {/* Subtitle */}

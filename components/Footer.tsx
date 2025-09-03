@@ -74,7 +74,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/soyam_mangla"
               target="_blank"
               className="hover:text-white"
             >
@@ -88,7 +88,7 @@ const Footer = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/soyammangla"
               target="_blank"
               className="hover:text-white"
             >

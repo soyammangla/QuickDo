@@ -18,36 +18,44 @@ const Feature = () => {
       {/* Features Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Card 1 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow hover:shadow-lg transition">
-          <CiMobile2 className="text-4xl text-blue-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Mobile First</h3>
+        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+          <CiMobile2 className="text-4xl text-blue-400 mx-auto mb-4 transition-transform duration-300" />
+          <h3 className="text-xl font-semibold mb-2 text-white">
+            Mobile First
+          </h3>
           <p className="text-gray-400">
             Optimized for mobile with offline sync across all devices
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow hover:shadow-lg transition">
-          <BsLightningChargeFill className="text-4xl text-yellow-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
+        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+          <BsLightningChargeFill className="text-4xl text-yellow-400 mx-auto mb-4 transition-transform duration-300" />
+          <h3 className="text-xl font-semibold mb-2 text-white">
+            Lightning Fast
+          </h3>
           <p className="text-gray-400">
             Instant loading and real-time updates for seamless productivity
           </p>
         </div>
 
         {/* Card 3 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow hover:shadow-lg transition">
-          <FaUsers className="text-4xl text-green-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Team Collaboration</h3>
+        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+          <FaUsers className="text-4xl text-green-400 mx-auto mb-4 transition-transform duration-300" />
+          <h3 className="text-xl font-semibold mb-2 text-white">
+            Team Collaboration
+          </h3>
           <p className="text-gray-400">
             Share tasks and collaborate with your team in real-time
           </p>
         </div>
 
         {/* Card 4 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow hover:shadow-lg transition">
-          <MdSecurity className="text-4xl text-red-400 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Secure & Private</h3>
+        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+          <MdSecurity className="text-4xl text-red-400 mx-auto mb-4 transition-transform duration-300" />
+          <h3 className="text-xl font-semibold mb-2 text-white">
+            Secure & Private
+          </h3>
           <p className="text-gray-400">
             End-to-end encryption keeps your data safe and private
           </p>
