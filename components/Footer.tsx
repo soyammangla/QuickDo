@@ -107,7 +107,7 @@ const Footer = () => {
         <span>Made with</span>
         <motion.span
           animate={{ scale: [1, 1.4, 1] }}
-          transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1 }}
+          transition={{ duration: 0.1, repeat: Infinity, repeatDelay: 0.1 }}
           className="inline-flex"
         >
           <IoIosHeart className="text-red-500 text-lg cursor-pointer" />
