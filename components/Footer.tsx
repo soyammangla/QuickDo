@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2">
             <li>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
 
         {/* Resources */}
-        <div>
+        <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-3">Resources</h3>
           <ul className="space-y-2">
             <li>
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media */}
-        <div>
+        <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a
