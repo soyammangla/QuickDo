@@ -26,11 +26,6 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/dashboard" className="hover:text-white">
-                Dashboard
-              </Link>
-            </li>
-            <li>
               <Link href="/faq" className="hover:text-white">
                 FAQ
               </Link>
@@ -103,16 +98,18 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2">
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2 text-gray-400">
         <span>Made with</span>
         <motion.span
-          animate={{ scale: [1, 1.4, 1] }}
-          transition={{ duration: 0.1, repeat: Infinity, repeatDelay: 0.1 }}
+          animate={{ scale: [1, 1.3, 1] }}
+          transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 0.5 }}
           className="inline-flex"
         >
-          <IoIosHeart className="text-red-500 text-lg cursor-pointer" />
+          <IoIosHeart className="text-red-500 text-lg cursor-pointer hover:drop-shadow-[0_0_6px_red]" />
         </motion.span>
-        <span>by Soyam.</span>
+        <span>
+          by <span className="font-semibold text-white">Soyam</span>.
+        </span>
       </div>
     </footer>
   );
