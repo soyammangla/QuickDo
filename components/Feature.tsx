@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 
 const Feature = () => {
   return (
-    <section className="w-[80%] mx-auto py-16 text-white text-center">
+    <section className="w-[80%] max-w-7xl mx-auto py-16 text-white text-center">
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
         Everything you need to stay organized
@@ -18,8 +18,8 @@ const Feature = () => {
       {/* Features Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Card 1 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-          <CiMobile2 className="text-4xl text-blue-400 mx-auto mb-4 transition-transform duration-300" />
+        <div className="p-6 bg-gradient-to-b from-neutral-900 to-neutral-800 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:scale-105 cursor-pointer group">
+          <CiMobile2 className="text-4xl text-blue-400 mx-auto mb-4 transition-transform duration-300 group-hover:rotate-6" />
           <h3 className="text-xl font-semibold mb-2 text-white">
             Mobile First
           </h3>
@@ -29,8 +29,8 @@ const Feature = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-          <BsLightningChargeFill className="text-4xl text-yellow-400 mx-auto mb-4 transition-transform duration-300" />
+        <div className="p-6 bg-gradient-to-b from-neutral-900 to-neutral-800 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:scale-105 cursor-pointer group">
+          <BsLightningChargeFill className="text-4xl text-yellow-400 mx-auto mb-4 transition-transform duration-300 group-hover:-rotate-6" />
           <h3 className="text-xl font-semibold mb-2 text-white">
             Lightning Fast
           </h3>
@@ -40,8 +40,8 @@ const Feature = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-          <FaUsers className="text-4xl text-green-400 mx-auto mb-4 transition-transform duration-300" />
+        <div className="p-6 bg-gradient-to-b from-neutral-900 to-neutral-800 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-105 cursor-pointer group">
+          <FaUsers className="text-4xl text-green-400 mx-auto mb-4 transition-transform duration-300 group-hover:translate-y-1" />
           <h3 className="text-xl font-semibold mb-2 text-white">
             Team Collaboration
           </h3>
@@ -51,8 +51,8 @@ const Feature = () => {
         </div>
 
         {/* Card 4 */}
-        <div className="p-6 bg-neutral-900 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-          <MdSecurity className="text-4xl text-red-400 mx-auto mb-4 transition-transform duration-300" />
+        <div className="p-6 bg-gradient-to-b from-neutral-900 to-neutral-800 rounded-xl shadow transition-transform transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:scale-105 cursor-pointer group">
+          <MdSecurity className="text-4xl text-red-400 mx-auto mb-4 transition-transform duration-300 group-hover:rotate-12" />
           <h3 className="text-xl font-semibold mb-2 text-white">
             Secure & Private
           </h3>

@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 
 interface FAQItem {
@@ -6,7 +7,7 @@ interface FAQItem {
   answer: string;
 }
 
-export default function FAQ() {
+export default function Page() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs: FAQItem[] = [

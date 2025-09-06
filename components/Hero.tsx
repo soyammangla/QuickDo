@@ -31,10 +31,6 @@ const Hero = () => {
               <FaArrowRight />
             </Link>
           </button>
-
-          <button className="px-6 py-3 border border-gray-400 text-white font-medium rounded-lg hover:bg-gray-800 transition">
-            <Link href="/signin">Sign In</Link>
-          </button>
         </div>
       </motion.div>
 
