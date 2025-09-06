@@ -2,7 +2,7 @@ export default function Page() {
   return (
     <section className="max-w-[70%] mx-auto py-16 text-white">
       <h2 className="text-4xl font-bold text-center mb-8">
-        Terms & Conditions
+        Terms &amp; Conditions
       </h2>
       <p className="text-gray-300 mb-6 text-center">
         Last Updated: September 6, 2025
@@ -13,7 +13,7 @@ export default function Page() {
         <p>
           Welcome to <span className="font-semibold text-white">QuickDo</span>!
           By using our application or services, you agree to comply with and be
-          bound by the following terms and conditions. Please read them
+          bound by the following terms &amp; conditions. Please read them
           carefully.
         </p>
 
@@ -83,8 +83,8 @@ export default function Page() {
             6. Disclaimer
           </h3>
           <p>
-            QuickDo is provided "as is" without warranties of any kind. We are
-            not responsible for data loss or service interruptions.
+            QuickDo is provided &quot;as is&quot; without warranties of any
+            kind. We are not responsible for data loss or service interruptions.
           </p>
         </div>
 
@@ -94,9 +94,10 @@ export default function Page() {
             7. Contact Us
           </h3>
           <p>
-            For any questions regarding these Terms & Conditions, contact us at{" "}
+            For any questions regarding these Terms &amp; Conditions, contact us
+            at{" "}
             <a
-              href="mailto:soyam@example.com"
+              href="mailto:soyamtech627@gmail.com"
               className="text-blue-500 hover:underline"
             >
               soyamtech627@gmail.com
