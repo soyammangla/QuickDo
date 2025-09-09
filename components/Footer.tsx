@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
 import { motion } from "framer-motion";
 
@@ -84,6 +84,14 @@ const Footer = () => {
               className="hover:text-white"
             >
               <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/soyam-mangla-432b13365/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              <FaLinkedin />
             </a>
           </div>
         </div>
