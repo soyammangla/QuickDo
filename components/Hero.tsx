@@ -1,53 +1,35 @@
 "use client";
-import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between text-center md:text-left mt-8 w-full max-w-7xl mx-auto px-6 py-24 bg-gradient-to-tr from-blue-700 via-black to-purple-800 text-white rounded-3xl shadow-2xl overflow-hidden">
-      {/* Left Content */}
-      <motion.div
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="flex-1 z-10"
+    <div className="h-[460px] w-full flex flex-col justify-center items-center text-center px-6 bg-black mt-24 mb-24">
+      {/* Top Subheading */}
+      <h6 className="text-lg text-gray-300 mb-2 tracking-wide">
+        Welcome to{" "}
+        <span className="font-bold hover:text-blue-500">QuickDo</span>
+      </h6>
+
+      {/* Main Heading */}
+      <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 max-w-4xl ">
+        Plan Smarter, <br /> Work Better with QuickDo
+      </h1>
+
+      {/* Paragraph */}
+      <p className="text-gray-200 text-xl md:text-2xl max-w-2xl">
+        Stay on top of your daily tasks with smart reminders and easy
+        scheduling. Collaborate with your team in real time — all inside{" "}
+        <span className="font-semibold text-blue-400">QuickDo</span>.
+      </p>
+
+      {/* Button */}
+      <Link
+        href="/signin"
+        className="inline-block mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-snug tracking-tight">
-          Plan Smarter, <br />
-          Work Better with <span className="text-blue-400">QuickDo</span>
-        </h1>
-
-        <p className="text-lg md:text-xl max-w-xl mb-10 text-gray-300">
-          Stay on top of your tasks with AI-powered reminders, project tracking,
-          and collaboration tools — all in one place.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex space-x-4 justify-center md:justify-start">
-          <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-lg hover:scale-105 transform transition flex items-center space-x-2 shadow-lg">
-            <Link href="/signin" className="flex items-center space-x-2">
-              <span>Get Started</span>
-              <FaArrowRight />
-            </Link>
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Right Image / Illustration */}
-      <motion.img
-        src="/Hero (2).jpeg"
-        alt="QuickDo App Preview"
-        className="flex-1 w-full max-w-[550px] h-[550px] z-10 rounded-2xl shadow-2xl object-cover"
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9 }}
-      />
-
-      {/* Decorative Gradient Glow */}
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl"></div>
-    </section>
+        Get Started
+      </Link>
+    </div>
   );
 };
 

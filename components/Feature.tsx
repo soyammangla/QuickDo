@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 
 const Feature = () => {
   return (
-    <section className="w-[80%] max-w-7xl mx-auto py-16 text-white text-center">
+    <section className="w-[80%] max-w-7xl mx-auto py-16 text-white text-center mb-22">
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
         Everything you need to stay organized
