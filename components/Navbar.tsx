@@ -13,17 +13,17 @@ const Navbar = () => {
         <div>
           <ul className="flex space-x-8 text-lg font-medium">
             <li>
-              <Link href="/" className="hover:text-blue-400 transition">
+              <Link href="/" className="transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/task" className="hover:text-blue-400 transition">
+              <Link href="/task" className="transition">
                 Tasks
               </Link>
             </li>
             <li>
-              <Link href="/calendar" className="hover:text-blue-400 transition">
+              <Link href="/calendar" className="transition">
                 Calendar
               </Link>
             </li>
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div>
           <Link
             href="/signin"
-            className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium"
+            className="px-5 py-2 bg-neutral-800 text-white rounded-lg transition font-medium"
           >
             Sign In
           </Link>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-gray-300 py-10 mt-16">
+    <footer className="bg-gradient-to-r from-black via-neutral-900 to-black text-white py-10 mt-16">
       <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
@@ -98,7 +98,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2 text-gray-400">
+      <div className="border-t border-neutal-900 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2 text-white">
         <span>Made with</span>
         <motion.span
           animate={{ scale: [1, 1.3, 1] }}

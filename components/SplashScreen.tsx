@@ -5,7 +5,7 @@ import Image from "next/image";
 const SplashScreen = () => {
   return (
     <motion.div
-      className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50"
+      className="fixed inset-0 flex flex-col items-center justify-center bg-neutal-900 z-50"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 3, duration: 2 }}
@@ -27,7 +27,7 @@ const SplashScreen = () => {
 
       {/* Tagline */}
       <motion.p
-        className="mt-6 text-gray-800 text-lg font-semibold"
+        className="mt-6 text-white text-lg font-semibold"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 2 }}

@@ -25,8 +25,8 @@ export default function AuthPage() {
           <button
             className={`flex-1 py-2 font-semibold ${
               isSignIn
-                ? "border-b-2 border-blue-600 text-blue-600"
-                : "text-gray-500"
+                ? "border-b-2 border-neutral-800 text-neutral-800"
+                : "text-neutral-800"
             }`}
             onClick={() => setIsSignIn(true)}
           >
@@ -35,8 +35,8 @@ export default function AuthPage() {
           <button
             className={`flex-1 py-2 font-semibold ${
               !isSignIn
-                ? "border-b-2 border-green-600 text-green-600"
-                : "text-gray-500"
+                ? "border-b-2 border-neutral-800 text-neutral-800"
+                : "text-neutral-800"
             }`}
             onClick={() => setIsSignIn(false)}
           >
@@ -67,7 +67,7 @@ export default function AuthPage() {
           )}
 
           <div>
-            <label className="block text-gray-700 mb-2" htmlFor="email">
+            <label className="block text-black mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -82,7 +82,7 @@ export default function AuthPage() {
           </div>
 
           <div>
-            <label className="block text-gray-700 mb-2" htmlFor="password">
+            <label className="block text-black mb-2" htmlFor="password">
               Password
             </label>
             <input
@@ -100,19 +100,19 @@ export default function AuthPage() {
             type="submit"
             className={`w-full py-3 rounded-xl font-semibold transition ${
               isSignIn
-                ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "bg-green-600 text-white hover:bg-green-700"
+                ? "bg-neutral-800 text-white"
+                : "bg-neutral-800 text-white"
             }`}
           >
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
         </form>
 
-        <p className="text-center text-gray-500 mt-5">
+        <p className="text-center text-black mt-5">
           {isSignIn ? "Don't have an account?" : "Already have an account?"}{" "}
           <button
             onClick={() => setIsSignIn(!isSignIn)}
-            className="text-blue-600 font-medium hover:underline"
+            className="text-black font-medium hover:underline"
           >
             {isSignIn ? "Sign Up" : "Sign In"}
           </button>

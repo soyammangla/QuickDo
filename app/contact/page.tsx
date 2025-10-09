@@ -35,7 +35,7 @@ export default function Page() {
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6"
+        className="bg-neutral-900 p-8 rounded-xl shadow-lg space-y-6"
       >
         {/* Name */}
         <div>
@@ -48,7 +48,7 @@ export default function Page() {
             type="text"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 rounded-lg bg-neutral-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your name"
             required
           />
@@ -65,7 +65,7 @@ export default function Page() {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 rounded-lg bg-neutral-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter your email"
             required
           />
@@ -82,7 +82,7 @@ export default function Page() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 rounded-lg bg-neutral-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Write your message..."
             required
           />
@@ -91,29 +91,26 @@ export default function Page() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full py-3 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="w-full py-3 bg-neutral-700 rounded-lg font-semibold transition"
         >
           Send Message
         </button>
       </form>
 
       {/* Direct Contact Options */}
-      <div className="mt-12 bg-gray-900 p-8 rounded-xl shadow-lg">
+      <div className="mt-12 bg-neutral-900 p-8 rounded-xl shadow-lg">
         <h3 className="text-2xl font-semibold mb-6 text-center">
           Or Contact Us Directly
         </h3>
-        <div className="flex flex-col items-center space-y-4 text-gray-300">
+        <div className="flex flex-col items-center space-y-4 text-white">
           <a
-            href="mailto:soyam@example.com"
-            className="flex items-center space-x-3 hover:text-white"
+            href="mailto:soyamtech627@gmail.com"
+            className="flex items-center space-x-3"
           >
             <FaEnvelope className="text-lg" />
             <span>soyamtech627@gmail.com</span>
           </a>
-          <a
-            href="tel:+911234567890"
-            className="flex items-center space-x-3 hover:text-white"
-          >
+          <a href="tel:+918053761134" className="flex items-center space-x-3">
             <FaPhone className="text-lg" />
             <span>+91 80537 61134</span>
           </a>

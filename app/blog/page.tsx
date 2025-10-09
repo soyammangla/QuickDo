@@ -40,9 +40,9 @@ export default function Page() {
         {blogPosts.map((post) => (
           <div
             key={post.id}
-            className="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition"
+            className="bg-neutral-900 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition"
           >
-            <p className="text-sm text-gray-400 mb-2">{post.date}</p>
+            <p className="text-sm text-white mb-2">{post.date}</p>
             <h3 className="text-2xl font-semibold mb-3">{post.title}</h3>
             <p className="text-gray-300 mb-4">{post.description}</p>
             <button className="text-blue-500 font-semibold hover:underline">

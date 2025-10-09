@@ -39,9 +39,9 @@ export default function CalendarPage() {
   const dayEvents = (date: string) => events.filter((e) => e.date === date);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 py-12 px-4 flex justify-center">
+    <div className="min-h-screen bg-neutral-800 py-12 px-4 flex justify-center">
       <div className="w-full max-w-5xl bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-8">
+        <h1 className="text-4xl font-extrabold text-center text-neutral-800 mb-8">
           📅 QuickDo Calendar
         </h1>
 
@@ -61,16 +61,16 @@ export default function CalendarPage() {
                 className={`p-3 rounded-xl cursor-pointer border transition
                   ${
                     selectedDate === dateStr
-                      ? "bg-blue-600 text-white border-blue-700"
+                      ? "bg-neutral-800 text-white border-neutral-800"
                       : isToday(day)
-                      ? "border-blue-400 text-blue-600 font-semibold"
+                      ? "border-neutral-800 text-neutral-700 font-semibold"
                       : "bg-gray-50 hover:bg-gray-100"
                   }`}
               >
                 {format(day, "d")}
                 {dayEvents(dateStr).length > 0 && (
                   <div className="mt-1 text-xs bg-green-200 text-green-800 rounded px-1">
-                    {dayEvents(dateStr).length} evt
+                    {dayEvents(dateStr).length} event
                   </div>
                 )}
               </div>
@@ -88,7 +88,7 @@ export default function CalendarPage() {
           <div className="flex gap-2 mb-6">
             <input
               type="text"
-              className="flex-1 p-3 rounded-xl border focus:ring-2 focus:ring-blue-500 outline-none"
+              className="flex-1 p-3 rounded-xl border focus:ring-2 outline-none"
               placeholder="Add new event..."
               value={newEvent}
               onChange={(e) => setNewEvent(e.target.value)}
@@ -96,7 +96,7 @@ export default function CalendarPage() {
             />
             <button
               onClick={addEvent}
-              className="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition font-medium"
+              className="flex items-center gap-2 bg-neutral-800 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition font-medium"
             >
               <PlusCircle size={20} /> Add
             </button>
@@ -104,7 +104,7 @@ export default function CalendarPage() {
 
           {/* Events List */}
           {dayEvents(selectedDate).length === 0 ? (
-            <p className="text-gray-500 text-center">No events for this day.</p>
+            <p className="text-black text-center">No events for this day.</p>
           ) : (
             <ul className="space-y-3">
               {dayEvents(selectedDate).map((event) => (

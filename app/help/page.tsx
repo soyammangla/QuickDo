@@ -52,7 +52,7 @@ export default function Page() {
         {helpTopics.map((topic) => (
           <div
             key={topic.id}
-            className="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition"
+            className="bg-neutral-900 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition"
           >
             <h3 className="text-2xl font-semibold mb-2">{topic.title}</h3>
             <p className="text-gray-300 mb-4">{topic.description}</p>

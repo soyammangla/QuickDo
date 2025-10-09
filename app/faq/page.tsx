@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 
 interface FAQItem {
@@ -7,7 +6,7 @@ interface FAQItem {
   answer: string;
 }
 
-export default function Page() {
+export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs: FAQItem[] = [
@@ -51,11 +50,11 @@ export default function Page() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-gray-900 rounded-lg shadow-md overflow-hidden"
+            className="bg-neutral-900 rounded-lg shadow-md overflow-hidden"
           >
             <button
               onClick={() => toggleFaq(index)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium hover:bg-gray-800 transition"
+              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium transition"
             >
               <span>{faq.question}</span>
               <span className="text-xl">{openIndex === index ? "−" : "+"}</span>

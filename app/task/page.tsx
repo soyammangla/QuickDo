@@ -31,9 +31,9 @@ export default function TaskPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 py-12 px-4 flex justify-center">
+    <div className="min-h-screen bg-neutral-800 py-12 px-4 flex justify-center">
       <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-8">
+        <h1 className="text-4xl font-extrabold text-center text-neutral-900 mb-8">
           QuickDo Tasks
         </h1>
 
@@ -41,7 +41,7 @@ export default function TaskPage() {
         <div className="flex items-center gap-2 mb-8">
           <input
             type="text"
-            className="flex-1 p-3 rounded-xl border focus:ring-2 focus:ring-blue-500 outline-none"
+            className="flex-1 p-3 rounded-xl border focus:ring-2 outline-none"
             placeholder="Enter a new task..."
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
@@ -49,7 +49,7 @@ export default function TaskPage() {
           />
           <button
             onClick={addTask}
-            className="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition font-medium"
+            className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl transition font-medium"
           >
             <PlusCircle size={20} /> Add
           </button>
@@ -57,7 +57,7 @@ export default function TaskPage() {
 
         {/* Task List */}
         {tasks.length === 0 ? (
-          <div className="text-center text-gray-500 py-12">
+          <div className="text-center text-black py-12">
             <p className="text-lg">✨ No tasks yet. Start by adding one!</p>
           </div>
         ) : (
