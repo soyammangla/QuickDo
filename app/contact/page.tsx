@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaEnvelope, FaPhone, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function Page() {
   const [formData, setFormData] = useState({
