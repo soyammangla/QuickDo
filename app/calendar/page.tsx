@@ -39,16 +39,16 @@ export default function CalendarPage() {
   const dayEvents = (date: string) => events.filter((e) => e.date === date);
 
   return (
-    <div className="min-h-screen bg-neutral-800 py-12 px-4 flex justify-center">
-      <div className="w-full max-w-5xl bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-4xl font-extrabold text-center text-neutral-800 mb-8">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 py-12 px-4 flex justify-center transition-colors duration-300">
+      <div className="w-full max-w-5xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-8 transition-colors duration-300">
+        <h1 className="text-4xl font-extrabold text-center mb-8">
           📅 QuickDo Calendar
         </h1>
 
         {/* Calendar Grid */}
         <div className="grid grid-cols-7 gap-3 text-center font-medium mb-8">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
-            <div key={d} className="text-gray-500">
+            <div key={d} className="text-gray-500 dark:text-gray-300">
               {d}
             </div>
           ))}
@@ -59,13 +59,13 @@ export default function CalendarPage() {
                 key={dateStr}
                 onClick={() => setSelectedDate(dateStr)}
                 className={`p-3 rounded-xl cursor-pointer border transition
-                  ${
-                    selectedDate === dateStr
-                      ? "bg-neutral-800 text-white border-neutral-800"
-                      : isToday(day)
-                      ? "border-neutral-800 text-neutral-700 font-semibold"
-                      : "bg-gray-50 hover:bg-gray-100"
-                  }`}
+    ${
+      selectedDate === dateStr
+        ? "bg-neutral-700 dark:bg-neutral-600 text-white border-neutral-700 dark:border-neutral-500"
+        : isToday(day)
+        ? "border-2 border-black dark:border-white text-neutral-800 dark:text-gray-200 font-semibold"
+        : "bg-gray-50 dark:bg-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-600"
+    }`}
               >
                 {format(day, "d")}
                 {dayEvents(dateStr).length > 0 && (
@@ -79,8 +79,8 @@ export default function CalendarPage() {
         </div>
 
         {/* Event Section */}
-        <div className="bg-gray-50 rounded-xl p-6 shadow-inner">
-          <h2 className="text-2xl font-bold text-gray-700 mb-4">
+        <div className="bg-gray-50 dark:bg-neutral-700 rounded-xl p-6 shadow-inner transition-colors duration-300">
+          <h2 className="text-2xl font-bold mb-4">
             Events on {format(new Date(selectedDate), "PPP")}
           </h2>
 
@@ -88,7 +88,7 @@ export default function CalendarPage() {
           <div className="flex gap-2 mb-6">
             <input
               type="text"
-              className="flex-1 p-3 rounded-xl border focus:ring-2 outline-none"
+              className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-500 focus:ring-2 outline-none bg-white dark:bg-neutral-600 transition-colors duration-300"
               placeholder="Add new event..."
               value={newEvent}
               onChange={(e) => setNewEvent(e.target.value)}
@@ -96,7 +96,7 @@ export default function CalendarPage() {
             />
             <button
               onClick={addEvent}
-              className="flex items-center gap-2 bg-neutral-800 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition font-medium"
+              className="flex items-center gap-2 bg-black dark:bg-neutral-900 text-white px-5 py-3 rounded-xl hover:opacity-90 transition font-medium"
             >
               <PlusCircle size={20} /> Add
             </button>
@@ -104,15 +104,17 @@ export default function CalendarPage() {
 
           {/* Events List */}
           {dayEvents(selectedDate).length === 0 ? (
-            <p className="text-black text-center">No events for this day.</p>
+            <p className="text-black dark:text-gray-200 text-center">
+              No events for this day.
+            </p>
           ) : (
             <ul className="space-y-3">
               {dayEvents(selectedDate).map((event) => (
                 <li
                   key={event.id}
-                  className="p-3 bg-white border rounded-xl shadow flex justify-between items-center"
+                  className="p-3 bg-white dark:bg-neutral-600 border border-gray-300 dark:border-gray-500 rounded-xl shadow flex justify-between items-center transition-colors duration-300"
                 >
-                  <span className="text-gray-800">{event.text}</span>
+                  <span>{event.text}</span>
                 </li>
               ))}
             </ul>

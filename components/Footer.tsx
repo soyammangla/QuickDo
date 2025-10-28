@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
@@ -5,11 +6,11 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-black via-neutral-900 to-black text-white py-10 mt-16">
+    <footer className="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 py-10 mt-16">
       <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-white">QuickDo</h2>
+          <h2 className="text-2xl font-bold">QuickDo</h2>
           <p className="mt-3 text-sm">
             Plan Smarter. Work Better. <br />
             Helping you manage tasks, projects, and deadlines with ease.
@@ -17,63 +18,48 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="ml-auto">
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
+        <div className="md:ml-auto">
+          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/" className="hover:text-white">
-                Home
-              </Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/faq" className="hover:text-white">
-                FAQ
-              </Link>
+              <Link href="/FAQ">FAQ</Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-white">
-                Contact
-              </Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
 
         {/* Resources */}
-        <div className="ml-auto">
-          <h3 className="text-lg font-semibold text-white mb-3">Resources</h3>
+        <div className="md:ml-auto">
+          <h3 className="text-lg font-semibold mb-3">Resources</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/blog" className="hover:text-white">
-                Blog
-              </Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-white">
-                Privacy Policy
-              </Link>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-white">
-                Terms & Conditions
-              </Link>
+              <Link href="/terms">Terms & Conditions</Link>
             </li>
             <li>
-              <Link href="/help" className="hover:text-white">
-                Help Center
-              </Link>
+              <Link href="/help">Help Center</Link>
             </li>
           </ul>
         </div>
 
         {/* Social Media */}
-        <div className="ml-auto">
-          <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
+        <div className="md:ml-auto">
+          <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white"
             >
               <FaTwitter />
             </a>
@@ -81,7 +67,6 @@ const Footer = () => {
               href="https://github.com/soyammangla"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white"
             >
               <FaGithub />
             </a>
@@ -89,7 +74,6 @@ const Footer = () => {
               href="https://www.linkedin.com/in/soyam-mangla-432b13365/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white"
             >
               <FaLinkedin />
             </a>
@@ -98,17 +82,17 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-neutal-900 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2 text-white">
+      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2">
         <span>Made with</span>
         <motion.span
           animate={{ scale: [1, 1.3, 1] }}
           transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 0.5 }}
           className="inline-flex"
         >
-          <IoIosHeart className="text-red-500 text-lg cursor-pointer hover:drop-shadow-[0_0_6px_red]" />
+          <IoIosHeart className="text-red-500 text-lg cursor-pointer" />
         </motion.span>
         <span>
-          by <span className="font-semibold text-white">Soyam</span>.
+          by <span className="font-semibold">Soyam</span>.
         </span>
       </div>
     </footer>

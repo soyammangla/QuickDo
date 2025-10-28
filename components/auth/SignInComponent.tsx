@@ -1,0 +1,137 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { signIn } from "next-auth/react";
+
+export default function AuthPage() {
+  const [isSignIn, setIsSignIn] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (isSignIn) {
+      alert(`Sign In\nEmail: ${email}\nPassword: ${password}`);
+    } else {
+      alert(`Sign Up\nName: ${name}\nEmail: ${email}\nPassword: ${password}`);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md">
+        {/* Tabs */}
+        <div className="flex mb-6 border-b-2 border-gray-200">
+          <button
+            className={`flex-1 py-2 font-semibold ${
+              isSignIn
+                ? "border-b-2 border-neutral-800 text-neutral-800"
+                : "text-neutral-800"
+            }`}
+            onClick={() => setIsSignIn(true)}
+          >
+            Sign In
+          </button>
+          <button
+            className={`flex-1 py-2 font-semibold ${
+              !isSignIn
+                ? "border-b-2 border-neutral-800 text-neutral-800"
+                : "text-neutral-800"
+            }`}
+            onClick={() => setIsSignIn(false)}
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+          {isSignIn ? "Sign In" : "Sign Up"}
+        </h1>
+
+        {/* Google Sign-In Button */}
+        <button
+          type="button"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+          className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl mb-5 hover:bg-gray-100 transition"
+        >
+          <Image src="/Google.png" alt="Google logo" width={20} height={20} />
+          <span className="text-gray-700 font-medium">Sign in with Google</span>
+        </button>
+
+        <div className="flex items-center mb-5">
+          <div className="flex-grow h-px bg-gray-300"></div>
+          <span className="px-2 text-gray-500 text-sm">or</span>
+          <div className="flex-grow h-px bg-gray-300"></div>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {!isSignIn && (
+            <div>
+              <label className="block text-gray-700 mb-2" htmlFor="name">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                placeholder="Your full name"
+                className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          )}
+
+          <div>
+            <label className="block text-black mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="you@example.com"
+              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-black mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Enter your password"
+              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 rounded-xl font-semibold bg-neutral-800 text-white hover:opacity-90 transition"
+          >
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </button>
+        </form>
+
+        <p className="text-center text-black mt-5">
+          {isSignIn ? "Don't have an account?" : "Already have an account?"}{" "}
+          <button
+            onClick={() => setIsSignIn(!isSignIn)}
+            className="text-black font-medium hover:underline"
+          >
+            {isSignIn ? "Sign Up" : "Sign In"}
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+}

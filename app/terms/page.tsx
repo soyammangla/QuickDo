@@ -1,27 +1,26 @@
+"use client";
+
 export default function Page() {
   return (
-    <section className="max-w-[70%] mx-auto py-16 text-white">
+    <section className="max-w-[70%] mx-auto py-16 transition-colors duration-300 bg-white dark:bg-black text-black dark:text-white">
       <h2 className="text-4xl font-bold text-center mb-8">
         Terms &amp; Conditions
       </h2>
-      <p className="text-gray-300 mb-6 text-center">
+      <p className="text-black dark:text-white mb-6 text-center">
         Last Updated: September 6, 2025
       </p>
 
-      <div className="space-y-8 text-gray-300">
+      <div className="space-y-8">
         {/* Introduction */}
         <p>
-          Welcome to <span className="font-semibold text-white">QuickDo</span>!
-          By using our application or services, you agree to comply with and be
-          bound by the following terms &amp; conditions. Please read them
-          carefully.
+          Welcome to <span className="font-semibold">QuickDo</span>! By using
+          our application or services, you agree to comply with and be bound by
+          the following terms &amp; conditions. Please read them carefully.
         </p>
 
         {/* Use of Service */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
-            1. Use of Service
-          </h3>
+          <h3 className="text-2xl font-semibold mb-3">1. Use of Service</h3>
           <p>
             QuickDo provides task management tools to help you organize and
             manage your projects efficiently. You agree to use the service for
@@ -31,7 +30,7 @@ export default function Page() {
 
         {/* Account */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
+          <h3 className="text-2xl font-semibold mb-3">
             2. Account Responsibilities
           </h3>
           <p>
@@ -43,7 +42,7 @@ export default function Page() {
 
         {/* Intellectual Property */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
+          <h3 className="text-2xl font-semibold mb-3">
             3. Intellectual Property
           </h3>
           <p>
@@ -55,9 +54,7 @@ export default function Page() {
 
         {/* Restrictions */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
-            4. Restrictions
-          </h3>
+          <h3 className="text-2xl font-semibold mb-3">4. Restrictions</h3>
           <p>
             You may not copy, modify, distribute, sell, or lease any part of
             QuickDo, use it for commercial purposes without permission, or
@@ -67,9 +64,7 @@ export default function Page() {
 
         {/* Termination */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
-            5. Termination
-          </h3>
+          <h3 className="text-2xl font-semibold mb-3">5. Termination</h3>
           <p>
             We reserve the right to suspend or terminate your account if you
             violate these terms or engage in any activity that disrupts the
@@ -79,9 +74,7 @@ export default function Page() {
 
         {/* Disclaimer */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
-            6. Disclaimer
-          </h3>
+          <h3 className="text-2xl font-semibold mb-3">6. Disclaimer</h3>
           <p>
             QuickDo is provided &quot;as is&quot; without warranties of any
             kind. We are not responsible for data loss or service interruptions.
@@ -90,9 +83,7 @@ export default function Page() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-3">
-            7. Contact Us
-          </h3>
+          <h3 className="text-2xl font-semibold mb-3">7. Contact Us</h3>
           <p>
             For any questions regarding these Terms &amp; Conditions, contact us
             at{" "}

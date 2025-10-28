@@ -27,7 +27,7 @@ const SplashScreen = () => {
 
       {/* Tagline */}
       <motion.p
-        className="mt-6 text-white text-lg font-semibold"
+        className="mt-6 text-black dark:text-white text-lg font-semibold"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 2 }}

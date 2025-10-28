@@ -31,9 +31,9 @@ export default function TaskPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-800 py-12 px-4 flex justify-center">
-      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-4xl font-extrabold text-center text-neutral-900 mb-8">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 py-12 px-4 flex justify-center transition-colors duration-300">
+      <div className="w-full max-w-2xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-8 transition-colors duration-300">
+        <h1 className="text-4xl font-extrabold text-center mb-8">
           QuickDo Tasks
         </h1>
 
@@ -41,7 +41,7 @@ export default function TaskPage() {
         <div className="flex items-center gap-2 mb-8">
           <input
             type="text"
-            className="flex-1 p-3 rounded-xl border focus:ring-2 outline-none"
+            className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 outline-none bg-white dark:bg-neutral-700 transition-colors duration-300"
             placeholder="Enter a new task..."
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
@@ -49,7 +49,7 @@ export default function TaskPage() {
           />
           <button
             onClick={addTask}
-            className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl transition font-medium"
+            className="flex items-center gap-2 bg-black dark:bg-neutral-900 text-white px-5 py-3 rounded-xl transition font-medium hover:opacity-90"
           >
             <PlusCircle size={20} /> Add
           </button>
@@ -57,7 +57,7 @@ export default function TaskPage() {
 
         {/* Task List */}
         {tasks.length === 0 ? (
-          <div className="text-center text-black py-12">
+          <div className="text-center py-12">
             <p className="text-lg">✨ No tasks yet. Start by adding one!</p>
           </div>
         ) : (
@@ -65,11 +65,11 @@ export default function TaskPage() {
             {tasks.map((task) => (
               <div
                 key={task.id}
-                className="flex justify-between items-center bg-gray-50 border rounded-xl p-4 hover:shadow-md transition"
+                className="flex justify-between items-center bg-gray-50 dark:bg-neutral-700 border border-gray-300 dark:border-gray-600 rounded-xl p-4 hover:shadow-md transition-colors duration-300"
               >
                 <span
                   className={`flex-1 text-lg ${
-                    task.done ? "line-through text-gray-400" : "text-gray-800"
+                    task.done ? "line-through text-gray-400" : ""
                   }`}
                 >
                   {task.text}
