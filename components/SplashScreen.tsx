@@ -5,7 +5,7 @@ import Image from "next/image";
 const SplashScreen = () => {
   return (
     <motion.div
-      className="fixed inset-0 flex flex-col items-center justify-center bg-neutral-900 z-50 px-4 text-center"
+      className="fixed inset-0 flex flex-col items-center justify-center bg-neutal-900 z-50"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 3, duration: 2 }}
@@ -21,13 +21,13 @@ const SplashScreen = () => {
           alt="QuickDo Logo"
           width={820}
           height={820}
-          className="rounded-2xl shadow-xl w-[80%] sm:w-[60%] md:w-[40%] lg:w-[25%] h-auto mx-auto"
+          className="rounded-2xl shadow-xl"
         />
       </motion.div>
 
       {/* Tagline */}
       <motion.p
-        className="mt-6 text-white text-base sm:text-lg md:text-xl font-semibold"
+        className="mt-6 text-black dark:text-white text-lg font-semibold"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 2 }}
