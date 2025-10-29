@@ -26,17 +26,17 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen py-16 px-4 bg-white dark:bg-neutral-900 transition-colors duration-300">
-      <div className="max-w-3xl mx-auto space-y-12">
+    <section className="min-h-screen py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-900 transition-colors duration-300">
+      <div className="max-w-3xl mx-auto space-y-10 sm:space-y-12">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-black dark:text-white">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-black dark:text-white">
           Contact Us
         </h2>
 
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-md border border-gray-200 dark:border-neutral-700 space-y-5 transition-colors duration-300"
+          className="bg-white dark:bg-neutral-800 p-5 sm:p-6 rounded-2xl shadow-md border border-gray-200 dark:border-neutral-700 space-y-5 transition-colors duration-300"
         >
           <div>
             <label
@@ -104,11 +104,11 @@ export default function ContactPage() {
         </form>
 
         {/* Direct Contact */}
-        <div className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-md border border-gray-200 dark:border-neutral-700 transition-colors duration-300">
+        <div className="bg-white dark:bg-neutral-800 p-5 sm:p-6 rounded-2xl shadow-md border border-gray-200 dark:border-neutral-700 transition-colors duration-300">
           <h3 className="text-2xl font-semibold text-center mb-5 text-black dark:text-white">
             Or Contact Us Directly
           </h3>
-          <div className="flex flex-col items-center space-y-3 text-black dark:text-white">
+          <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-8 items-center space-y-3 sm:space-y-0 text-black dark:text-white">
             <a
               href="mailto:soyamtech627@gmail.com"
               className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-300"

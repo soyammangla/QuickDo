@@ -6,8 +6,10 @@ import {
   endOfMonth,
   eachDayOfInterval,
   isToday,
+  addMonths,
+  subMonths,
 } from "date-fns";
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, Trash2 } from "lucide-react";
 
 type Event = {
   id: number;
@@ -21,10 +23,10 @@ export default function CalendarPage() {
     format(new Date(), "yyyy-MM-dd")
   );
   const [newEvent, setNewEvent] = useState("");
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  const today = new Date();
-  const start = startOfMonth(today);
-  const end = endOfMonth(today);
+  const start = startOfMonth(currentMonth);
+  const end = endOfMonth(currentMonth);
   const days = eachDayOfInterval({ start, end });
 
   const addEvent = () => {
@@ -36,14 +38,40 @@ export default function CalendarPage() {
     setNewEvent("");
   };
 
+  const deleteEvent = (id: number) => {
+    setEvents(events.filter((e) => e.id !== id));
+  };
+
   const dayEvents = (date: string) => events.filter((e) => e.date === date);
+
+  const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
+  const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 py-12 px-4 flex justify-center transition-colors duration-300">
       <div className="w-full max-w-5xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-8 transition-colors duration-300">
-        <h1 className="text-4xl font-extrabold text-center mb-8">
+        <h1 className="text-4xl font-extrabold text-center mb-8 text-black dark:text-white">
           📅 QuickDo Calendar
         </h1>
+
+        {/* Month Navigation */}
+        <div className="flex justify-between items-center mb-6">
+          <button
+            onClick={prevMonth}
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
+          >
+            ←
+          </button>
+          <h2 className="text-xl font-semibold text-black dark:text-white">
+            {format(currentMonth, "MMMM yyyy")}
+          </h2>
+          <button
+            onClick={nextMonth}
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
+          >
+            →
+          </button>
+        </div>
 
         {/* Calendar Grid */}
         <div className="grid grid-cols-7 gap-3 text-center font-medium mb-8">
@@ -52,24 +80,25 @@ export default function CalendarPage() {
               {d}
             </div>
           ))}
+
           {days.map((day) => {
             const dateStr = format(day, "yyyy-MM-dd");
             return (
               <div
                 key={dateStr}
                 onClick={() => setSelectedDate(dateStr)}
-                className={`p-3 rounded-xl cursor-pointer border transition
+                className={`p-3 rounded-xl cursor-pointer border transition text-sm md:text-base
     ${
       selectedDate === dateStr
         ? "bg-neutral-700 dark:bg-neutral-600 text-white border-neutral-700 dark:border-neutral-500"
         : isToday(day)
         ? "border-2 border-black dark:border-white text-neutral-800 dark:text-gray-200 font-semibold"
-        : "bg-gray-50 dark:bg-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-600"
+        : "bg-gray-50 dark:bg-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-600 text-black dark:text-gray-200"
     }`}
               >
                 {format(day, "d")}
                 {dayEvents(dateStr).length > 0 && (
-                  <div className="mt-1 text-xs bg-green-200 text-green-800 rounded px-1">
+                  <div className="mt-1 text-xs bg-green-200 text-green-800 dark:bg-green-600 dark:text-white rounded px-1">
                     {dayEvents(dateStr).length} event
                   </div>
                 )}
@@ -80,15 +109,15 @@ export default function CalendarPage() {
 
         {/* Event Section */}
         <div className="bg-gray-50 dark:bg-neutral-700 rounded-xl p-6 shadow-inner transition-colors duration-300">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">
             Events on {format(new Date(selectedDate), "PPP")}
           </h2>
 
-          {/* Input */}
+          {/* Input Field */}
           <div className="flex gap-2 mb-6">
             <input
               type="text"
-              className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-500 focus:ring-2 outline-none bg-white dark:bg-neutral-600 transition-colors duration-300"
+              className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-500 focus:ring-2 outline-none bg-white dark:bg-neutral-600 text-black dark:text-white transition-colors duration-300"
               placeholder="Add new event..."
               value={newEvent}
               onChange={(e) => setNewEvent(e.target.value)}
@@ -114,7 +143,16 @@ export default function CalendarPage() {
                   key={event.id}
                   className="p-3 bg-white dark:bg-neutral-600 border border-gray-300 dark:border-gray-500 rounded-xl shadow flex justify-between items-center transition-colors duration-300"
                 >
-                  <span>{event.text}</span>
+                  <span className="text-black dark:text-white">
+                    {event.text}
+                  </span>
+                  <button
+                    onClick={() => deleteEvent(event.id)}
+                    className="text-red-500 hover:text-red-400 transition"
+                    title="Delete event"
+                  >
+                    <Trash2 size={18} />
+                  </button>
                 </li>
               ))}
             </ul>

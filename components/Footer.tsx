@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 py-10 mt-16">
-      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="w-[90%] sm:w-[85%] md:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold">QuickDo</h2>
@@ -55,7 +55,7 @@ const Footer = () => {
         {/* Social Media */}
         <div className="md:ml-auto">
           <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-          <div className="flex space-x-4 text-xl">
+          <div className="flex justify-center sm:justify-start space-x-4 text-xl">
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
@@ -82,7 +82,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-sm flex items-center justify-center space-x-2">
+      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-sm flex flex-col sm:flex-row items-center justify-center gap-2">
         <span>Made with</span>
         <motion.span
           animate={{ scale: [1, 1.3, 1] }}

@@ -42,8 +42,8 @@ export default function FAQ() {
   };
 
   return (
-    <section className="max-w-[50%] mx-auto py-16 transition-colors duration-300 text-black dark:text-white">
-      <h2 className="text-4xl font-bold text-center mb-10">
+    <section className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] mx-auto py-12 sm:py-16 transition-colors duration-300 text-black dark:text-white">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
@@ -54,13 +54,15 @@ export default function FAQ() {
           >
             <button
               onClick={() => toggleFaq(index)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium transition-colors duration-300"
+              className="w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 text-left font-medium transition-colors duration-300"
             >
-              <span>{faq.question}</span>
-              <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
+              <span className="text-base sm:text-lg">{faq.question}</span>
+              <span className="text-xl sm:text-2xl">
+                {openIndex === index ? "−" : "+"}
+              </span>
             </button>
             {openIndex === index && (
-              <div className="px-6 pb-4 text-black dark:text-white">
+              <div className="px-4 sm:px-6 pb-3 sm:pb-4 text-black dark:text-white text-sm sm:text-base">
                 {faq.answer}
               </div>
             )}

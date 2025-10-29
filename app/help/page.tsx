@@ -52,10 +52,10 @@ export default function Page() {
         {helpTopics.map((topic) => (
           <div
             key={topic.id}
-            className="p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition bg-neutral-100 dark:bg-neutral-800"
+            className="p-6 rounded-xl shadow-md border border-gray-200 dark:border-neutral-700 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 bg-neutral-100 dark:bg-neutral-800"
           >
             <h3 className="text-2xl font-semibold mb-2">{topic.title}</h3>
-            <p className="text-black dark:text-white mb-4">
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
               {topic.description}
             </p>
             {topic.href && (

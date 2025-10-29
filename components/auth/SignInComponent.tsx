@@ -20,8 +20,8 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
-      <div className="bg-white dark:bg-neutral-800 p-10 rounded-2xl shadow-xl w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-neutral-900 transition-colors duration-300 px-4 sm:px-6">
+      <div className="bg-white dark:bg-neutral-800 p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl w-full max-w-md sm:max-w-lg md:max-w-md">
         {/* Tabs */}
         <div className="flex mb-6 border-b-2 border-gray-200 dark:border-neutral-700">
           <button
@@ -46,7 +46,7 @@ export default function AuthPage() {
           </button>
         </div>
 
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -57,7 +57,7 @@ export default function AuthPage() {
           className="w-full flex items-center justify-center gap-3 border border-gray-300 dark:border-neutral-600 py-3 rounded-xl mb-5 hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
         >
           <Image src="/Google.png" alt="Google logo" width={20} height={20} />
-          <span className="text-gray-700 dark:text-gray-200 font-medium">
+          <span className="text-gray-700 dark:text-gray-200 font-medium text-sm sm:text-base">
             Sign in with Google
           </span>
         </button>
@@ -74,7 +74,7 @@ export default function AuthPage() {
           {!isSignIn && (
             <div>
               <label
-                className="block text-gray-700 dark:text-gray-200 mb-2"
+                className="block text-gray-700 dark:text-gray-200 mb-2 text-sm sm:text-base"
                 htmlFor="name"
               >
                 Name
@@ -86,14 +86,14 @@ export default function AuthPage() {
                 onChange={(e) => setName(e.target.value)}
                 required
                 placeholder="Your full name"
-                className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100"
+                className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100 text-sm sm:text-base"
               />
             </div>
           )}
 
           <div>
             <label
-              className="block text-black dark:text-gray-200 mb-2"
+              className="block text-black dark:text-gray-200 mb-2 text-sm sm:text-base"
               htmlFor="email"
             >
               Email
@@ -105,13 +105,13 @@ export default function AuthPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="you@example.com"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100"
+              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100 text-sm sm:text-base"
             />
           </div>
 
           <div>
             <label
-              className="block text-black dark:text-gray-200 mb-2"
+              className="block text-black dark:text-gray-200 mb-2 text-sm sm:text-base"
               htmlFor="password"
             >
               Password
@@ -123,19 +123,19 @@ export default function AuthPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Enter your password"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100"
+              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-neutral-700 border-gray-300 dark:border-neutral-600 text-gray-800 dark:text-gray-100 text-sm sm:text-base"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl font-semibold bg-neutral-800 dark:bg-white text-white dark:text-black hover:opacity-90 transition"
+            className="w-full py-3 rounded-xl font-semibold bg-neutral-800 dark:bg-white text-white dark:text-black hover:opacity-90 transition text-sm sm:text-base"
           >
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
         </form>
 
-        <p className="text-center text-black dark:text-gray-200 mt-5">
+        <p className="text-center text-black dark:text-gray-200 mt-5 text-sm sm:text-base">
           {isSignIn ? "Don't have an account?" : "Already have an account?"}{" "}
           <button
             onClick={() => setIsSignIn(!isSignIn)}
