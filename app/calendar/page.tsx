@@ -48,35 +48,38 @@ export default function CalendarPage() {
   const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 py-12 px-4 flex justify-center transition-colors duration-300">
-      <div className="w-full max-w-5xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-8 transition-colors duration-300">
-        <h1 className="text-4xl font-extrabold text-center mb-8 text-black dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 py-8 px-3 sm:px-6 flex justify-center transition-colors duration-300">
+      <div className="w-full max-w-5xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-4 sm:p-8 transition-colors duration-300">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-center mb-6 sm:mb-8 text-black dark:text-white">
           📅 QuickDo Calendar
         </h1>
 
         {/* Month Navigation */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-3 sm:gap-0">
           <button
             onClick={prevMonth}
-            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80 w-full sm:w-auto"
           >
             ←
           </button>
-          <h2 className="text-xl font-semibold text-black dark:text-white">
+          <h2 className="text-lg sm:text-xl font-semibold text-black dark:text-white text-center">
             {format(currentMonth, "MMMM yyyy")}
           </h2>
           <button
             onClick={nextMonth}
-            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80 w-full sm:w-auto"
           >
             →
           </button>
         </div>
 
         {/* Calendar Grid */}
-        <div className="grid grid-cols-7 gap-3 text-center font-medium mb-8">
+        <div className="grid grid-cols-7 gap-1 sm:gap-3 text-center font-medium mb-8">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
-            <div key={d} className="text-gray-500 dark:text-gray-300">
+            <div
+              key={d}
+              className="text-gray-500 dark:text-gray-300 text-xs sm:text-sm"
+            >
               {d}
             </div>
           ))}
@@ -87,7 +90,7 @@ export default function CalendarPage() {
               <div
                 key={dateStr}
                 onClick={() => setSelectedDate(dateStr)}
-                className={`p-3 rounded-xl cursor-pointer border transition text-sm md:text-base
+                className={`p-2 sm:p-3 rounded-lg sm:rounded-xl cursor-pointer border transition text-xs sm:text-sm md:text-base 
     ${
       selectedDate === dateStr
         ? "bg-neutral-700 dark:bg-neutral-600 text-white border-neutral-700 dark:border-neutral-500"
@@ -98,7 +101,7 @@ export default function CalendarPage() {
               >
                 {format(day, "d")}
                 {dayEvents(dateStr).length > 0 && (
-                  <div className="mt-1 text-xs bg-green-200 text-green-800 dark:bg-green-600 dark:text-white rounded px-1">
+                  <div className="mt-1 text-[10px] sm:text-xs bg-green-200 text-green-800 dark:bg-green-600 dark:text-white rounded px-1">
                     {dayEvents(dateStr).length} event
                   </div>
                 )}
@@ -108,16 +111,16 @@ export default function CalendarPage() {
         </div>
 
         {/* Event Section */}
-        <div className="bg-gray-50 dark:bg-neutral-700 rounded-xl p-6 shadow-inner transition-colors duration-300">
-          <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">
+        <div className="bg-gray-50 dark:bg-neutral-700 rounded-xl p-4 sm:p-6 shadow-inner transition-colors duration-300">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black dark:text-white text-center sm:text-left">
             Events on {format(new Date(selectedDate), "PPP")}
           </h2>
 
           {/* Input Field */}
-          <div className="flex gap-2 mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 mb-6">
             <input
               type="text"
-              className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-500 focus:ring-2 outline-none bg-white dark:bg-neutral-600 text-black dark:text-white transition-colors duration-300"
+              className="flex-1 p-3 rounded-xl border border-gray-300 dark:border-gray-500 focus:ring-2 outline-none bg-white dark:bg-neutral-600 text-black dark:text-white transition-colors duration-300 text-sm sm:text-base"
               placeholder="Add new event..."
               value={newEvent}
               onChange={(e) => setNewEvent(e.target.value)}
@@ -125,15 +128,15 @@ export default function CalendarPage() {
             />
             <button
               onClick={addEvent}
-              className="flex items-center gap-2 bg-black dark:bg-neutral-900 text-white px-5 py-3 rounded-xl hover:opacity-90 transition font-medium"
+              className="flex items-center justify-center gap-2 bg-black dark:bg-neutral-900 text-white px-4 sm:px-5 py-3 rounded-xl hover:opacity-90 transition font-medium text-sm sm:text-base"
             >
-              <PlusCircle size={20} /> Add
+              <PlusCircle size={18} /> Add
             </button>
           </div>
 
           {/* Events List */}
           {dayEvents(selectedDate).length === 0 ? (
-            <p className="text-black dark:text-gray-200 text-center">
+            <p className="text-black dark:text-gray-200 text-center text-sm sm:text-base">
               No events for this day.
             </p>
           ) : (
@@ -143,7 +146,7 @@ export default function CalendarPage() {
                   key={event.id}
                   className="p-3 bg-white dark:bg-neutral-600 border border-gray-300 dark:border-gray-500 rounded-xl shadow flex justify-between items-center transition-colors duration-300"
                 >
-                  <span className="text-black dark:text-white">
+                  <span className="text-black dark:text-white text-sm sm:text-base">
                     {event.text}
                   </span>
                   <button
