@@ -29,17 +29,17 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4 sm:gap-8">
             <ul className="flex gap-4 sm:gap-8 text-base sm:text-lg font-medium">
               <li>
-                <Link href="/" className="transition hover:opacity-70">
+                <Link href="/" className="transition">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/task" className="transition hover:opacity-70">
+                <Link href="/task" className="transition">
                   Tasks
                 </Link>
               </li>
               <li>
-                <Link href="/calendar" className="transition hover:opacity-70">
+                <Link href="/calendar" className="transition">
                   Calendar
                 </Link>
               </li>
@@ -83,7 +83,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition hover:opacity-70"
+                  className="transition"
                   onClick={() => setIsOpen(false)}
                 >
                   Home
@@ -92,7 +92,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/task"
-                  className="transition hover:opacity-70"
+                  className="transition"
                   onClick={() => setIsOpen(false)}
                 >
                   Tasks
@@ -101,7 +101,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/calendar"
-                  className="transition hover:opacity-70"
+                  className="transition"
                   onClick={() => setIsOpen(false)}
                 >
                   Calendar

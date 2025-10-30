@@ -11,16 +11,24 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000); // 3 sec splash
-    return () => clearTimeout(timer);
+    if (typeof window === "undefined") return;
+    const hasShown = sessionStorage.getItem("splashShown");
+
+    if (hasShown) {
+      setLoading(false);
+    } else {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("splashShown", "true");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
-  if (loading) {
-    return <SplashScreen />;
-  }
+  if (loading) return <SplashScreen />;
 
   return (
-    <div className="text-black">
+    <div className="text-black dark:text-white transition-colors duration-300">
       <Navbar />
       <Hero />
       <Feature />
