@@ -55,19 +55,19 @@ export default function CalendarPage() {
         </h1>
 
         {/* Month Navigation */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-3 sm:gap-0">
+        <div className="flex items-center justify-center sm:justify-between mb-6 gap-3 sm:gap-0">
           <button
             onClick={prevMonth}
-            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80 w-full sm:w-auto"
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
           >
             ←
           </button>
-          <h2 className="text-lg sm:text-xl font-semibold text-black dark:text-white text-center">
+          <h2 className="text-lg sm:text-xl font-semibold text-black dark:text-white text-center flex-1">
             {format(currentMonth, "MMMM yyyy")}
           </h2>
           <button
             onClick={nextMonth}
-            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80 w-full sm:w-auto"
+            className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-neutral-700 hover:opacity-80"
           >
             →
           </button>
