@@ -23,7 +23,7 @@ export default function AuthPage() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm sm:text-base">
+        <p className="text-black-600 dark:text-white-300 mb-8 text-sm sm:text-base">
           Sign in securely using your Google account to continue.
         </p>
 
@@ -46,7 +46,7 @@ export default function AuthPage() {
         </button>
 
         {/* Footer */}
-        <p className="text-gray-500 dark:text-gray-400 text-xs mt-8">
+        <p className="text-black-500 dark:text-white-400 text-xs mt-8">
           By continuing, you agree to Quickdo’s{" "}
           <Link
             href="/terms"
