@@ -66,7 +66,7 @@ export default function CalendarPage() {
     <div className="min-h-screen bg-white dark:bg-neutral-900 py-8 px-3 sm:px-6 flex justify-center transition-colors duration-300">
       <div className="w-full max-w-5xl bg-white dark:bg-neutral-800 shadow-xl rounded-2xl p-4 sm:p-8 transition-colors duration-300">
         <h1 className="text-2xl sm:text-4xl font-extrabold text-center mb-6 sm:mb-8 text-black dark:text-white">
-          📅 QuickDo Calendar
+          QuickDo Calendar
         </h1>
 
         {/* Month Navigation */}
