@@ -116,8 +116,8 @@ export default function CalendarPage() {
               >
                 {format(day, "d")}
                 {dayEvents(dateStr).length > 0 && (
-                  <div className="mt-1 text-[10px] sm:text-xs bg-green-200 text-green-800 dark:bg-green-600 dark:text-white rounded px-1">
-                    {dayEvents(dateStr).length} event
+                  <div className="mt-1 text-[10px] sm:text-s bg-green-200 text-green-800 dark:bg-green-600 dark:text-white rounded px-1">
+                    {dayEvents(dateStr).length} Event
                   </div>
                 )}
               </div>
