@@ -82,7 +82,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-sm flex flex-col sm:flex-row items-center justify-center gap-2">
+      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-sm flex flex-row sm:flex-row items-center justify-center gap-2">
         <span>Made with</span>
         <motion.span
           animate={{ scale: [1, 1.3, 1] }}
